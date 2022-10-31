@@ -1,1 +1,13 @@
-
+body {
+    background-color: bisque;
+    margin: auto;
+}
+.button {
+    background-color: #357edd;
+    color: black;
+    margin-top: 1.5rem;
+    
+}
+input,.date {
+    color:black;
+}
