@@ -1,177 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="Assets/style.css"/>
-    <header>
-        <title>Task List Final Project</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Task Lists Final Project</title>
+  </head>
+  <body >
+    <header class="container bg-light shadow mb-4 mt-5">
+      <div class="container text-center">
+        <nav class="row">
+          <div class="col">
+            <h1 class="mt-3">Task Lists</h1>
+            <img src="./assets/images/logo2.png" alt="logo" class="pb-4 opacity-0.5" />
+          </div>
+        </nav>
+      </div>
     </header>
-</head>
-<body>
- <header class="navbar navbar-expand-lg bg-primary">
-      <nav class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/images/ourLogo.png" alt=""
-        /></a>
-        <h1 class="fw-bold">Welcome to our app</h1>
-      </nav>
-    </header>
-    <main>
-      <form action="/todoList.html">
-        <br />
-        <h1>Add New Task</h1>
-        <br />
-        <p>
-          <label for="taskName" class="form-label">Task Name</label> <br />
-          <input type="text" id="taskName" class="form-control" />
-        </p>
-        <br />
-        <p>
-          <label for="textDescription" class="form-label"
-            >Text Description:</label
+    <main class="container">
+      <section class="container">
+        <div class="container mb-3">
+          <div class="row">
+            <div class="col">
+              <h3 class="text-light text-center fs-1"> Add New Task</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="taskName" class="form-label fw-bold fs-3 ">
+              Task Name</label
+            >
+            <input
+              type="text"
+              class="form-control shadow "
+              id="taskName"
+              placeholder="Enter your task"
+            />
+          </div>
+          <div class="col">
+            <label for="assignedTo" class="form-label fw-bold fs-3">
+              Assigned To</label
+            >
+            <input
+              type="text"
+              class="form-control shadow"
+              id="assignedTo"
+              placeholder="Enter your task"
+            />
+          </div>
+          <div class="col">
+            <label for="dueDate" class="form-label fw-bold fs-3 "> Due Date</label>
+            <input type="date" class="form-control shadow" id="dueDate" />
+          </div>
+        </div>
+        <div class="form-outline m-4">
+          <label class="form-label fw-bold fs-3" for="taskDescription"
+            >Task Description</label
           >
-        </p>
-        <textarea
-          id="textDescription"
-          name="textDescription"
-          rows="4"
-          cols="50"
-          class="form-control"
-        ></textarea>
-        <br />
-        <p>
-          <label for="assignedTo" class="form-label">Assigned To:</label> 
-          <input type="text" id="assignedTo" class="form-control" /><br>
-          <label for="date" class="form-label">Due Date:</label></br>
-          <input type="date" />
-          <br>
-          <button class="button button--primary button--solid">Add Task</button>
-          </br>
-          <br />
-          <br>
+          <textarea
+            class="form-control"
+            id="taskDescription"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <div class=" d-grid m-5">
+          <button class="btn btn-primary justify-content-center" type="button">  Add Task</button>
+        </div>
+      </section>
+
+    <section class="d-flex container">
+      <div class="card m-5" style="width: 18rem">
+        <img src="./assets/images/todo5.jpg" class="card-img-top" alt="..." />
+        <div class="card-body ">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">AssignedTo</li>
+            <li class="list-group-item">Due Date</li>
+            <li class="list-group-item">Status</li>
+          </ul>
+
           <select class="form-select">
-            <option>In progress</option>
-            <option>To-do</option>
-            <option>Review</option>
-            <option>Done</option>
+            <option selected>IN PROGRESS</option>
+            <option value="1">DONE</option>
+            <option value="2">PENDING</option>
           </select>
-        </br>
-        </p>
-        <br>
-        <div class="container">  
-            <h1>Projects</h1>  
-            <!--Bootstrap Table using .table-condensed class-->  
-            <table class="table table-condensed table-hover">  
-                <thead>  
-                    <tr>  
-                        <th>Num.</th>
-                        <th>Project/Task Name</th>  
-                        <th>Details</th>  
-                        <th>Date</th>  
-                    </tr>  
-                </thead>  
-                <tbody>  
-                    <tr>  
-                        <td>1</td>  
-                        <td>Name</td>  
-                        <td>...</td>  
-                        <td>m/d/y</td>  
-                    </tr>  
-                    <tr>  
-                        <td>2</td>  
-                        <td>Name</td>  
-                        <td>...</td>  
-                        <td>m/d/y</td>  
-                    </tr>  
-                    <tr>  
-                        <td>3</td>  
-                        <td>Name</td>  
-                        <td>...</td>  
-                        <td>m/d/y</td>  
-                    </tr>  
-                </tbody>  
-            </table>  
-        </br>
-      </form>
+          <button class="btn btn-primary mt-2 m-auto">Edit</button>
+          <button class="btn btn-primary mt-2">Delete</button>
+        </div>
+      </div>
+      <div class="card m-5" style="width: 18rem">
+        <img src="./assets/images/todo5.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">AssignedTo</li>
+            <li class="list-group-item">Due Date</li>
+            <li class="list-group-item">Status</li>
+          </ul>
+          
+          <select class="form-select">
+            <option selected>IN PROGRESS</option>
+            <option value="1">DONE</option>
+         
+            
+            
+          </select>
+          <button class="btn btn-primary mt-2">Edit</button>
+          <button class="btn btn-primary mt-2">Delete</button>
+        </div>
+      </div>
+      <div class="card m-5" style="width: 18rem">
+        <img src="./assets/images/todo5.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <ul class="list-group list-group-flush ">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">AssignedTo</li>
+            <li class="list-group-item">Due Date</li>
+            <li class="list-group-item">Status</li>
+          </ul>
+
+          <select class="form-select" aria-label="Default select example">
+            <option selected>IN PROGRESS</option>
+            <option value="1">DONE</option>
+            <option value="2">PENDING</option>
+            <option value="3"></option>
+          </select>
+          <button class="btn btn-primary mt-2">Edit</button>
+          <button class="btn btn-primary mt-2">Delete</button>
+        </div>
+      </div>
+
+    </section>
+  
+      
     </main>
+    <footer class="container mt-5 bg-light p-5 shadow">
+      <h3 class="text-center">Developed By: Group-12</h3>
+    </footer>
 
-    <h1>Task List Beta</h1>
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">Add New tasks</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="3">Task Name</td>
-            </tr>
-            <tr>
-                <td colspan="3">Task Description</td>
-            </tr>
-            <tr>
-                <td colspan="3">Assigned to:</td>
-            </tr>
-        </tbody>
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">Projects</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="3">Task 1</td>
-                </tr>
-                <tr>
-                    <td colspan="3">Task 2</td>
-                </tr>
-                <tr>
-                    <td colspan="3">Task 3</td>
-                </tr>
-            </tbody>
-        </table>
-    </table>
-<footer>
-    <table>
-        <thead>
-            <th rowspan="2">Current Tasks</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="3">Task Name</td>
-            </tr>
-            <tr>
-                <td colspan="3">Task Description</td>
-            </tr>
-            <tr>
-                <td colspan="3"> Assigned to:</td>
-            </tr>
-            <tr>
-                <td colspan="3">Due Date</td>
-            </tr>
-            <tr>
-                <td colspan="3">Status</td>
-            </tr>
-        </tbody>
-    </table>
-</footer>
-
-    <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
-</body>
+  </body>
 </html>
